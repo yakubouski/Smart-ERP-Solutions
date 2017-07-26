@@ -1,0 +1,45 @@
+Options -Indexes -Includes -MultiViews
+<IfModule mod_php7.c>
+    php_value session.use_trans_sid on
+    php_value mbstring.internal_encoding UTF-8
+    php_value internal_encoding UTF-8
+    php_value display_errors on
+    php_value display_startup_errors on
+    php_value serialize_precision 4
+    php_value short_open_tag on
+    php_value log_errors on
+    php_value error_log .log/erp.log
+</IfModule>
+
+<IfModule mod_env.c>
+    SetEnv DEBUG 1
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  Options +FollowSymLinks
+  
+  RewriteCond %{REQUEST_FILENAME} .php$
+  RewriteRule ^(.*)$ / [L,R]
+
+  RewriteCond %{HTTP_HOST}  "^smarterp\..*$" [NC]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} "^/(css|js)/.*\.(css|js)$"
+  RewriteRule ^(.*)$ /smarterp.php/$1 [L]
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-l
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.*)$ / [L]
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive on
+  ExpiresByType image/jpeg "access plus 3 day"
+  ExpiresByType image/gif "access plus 3 day"
+  ExpiresByType image/png "access plus 3 day"
+  ExpiresByType text/css "access plus 3 day"
+  ExpiresByType application/javascript "access plus 3 day"  
+</IfModule>
