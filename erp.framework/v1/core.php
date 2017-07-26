@@ -41,8 +41,12 @@ namespace {
         \Globals\Request::$Protocol = !empty(filter_input(INPUT_SERVER,'HTTPS',FILTER_SANITIZE_STRING)) ? 'https':'http';
         spl_autoload_register(function($Class) {
             $Class = str_replace('\\','/',strtolower($Class));
-            ($exist = file_exists($filename = (__DIR__.DIRECTORY_SEPARATOR.$Class.'.php')) && (include_once($filename)));
-            !$exist && \Sys\Autoload::Import($Class);
+            if(file_exists($filename = (__DIR__.DIRECTORY_SEPARATOR.$Class.'.php'))) {
+                include_once ($filename);
+            }
+            else {
+                \Sys\Autoload::Import($Class);
+            }
         });
     });
 }

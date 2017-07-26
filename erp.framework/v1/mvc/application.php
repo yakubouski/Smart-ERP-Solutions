@@ -1,32 +1,31 @@
 <?php
 namespace MVC
 {
+    !defined('APP_DEFAULT_CONTROLLER') && define('APP_DEFAULT_CONTROLLER','index');
+    !defined('APP_DIR_MODULES') && define('APP_DIR_MODULES','modules/');
 
 	class Application {
-
-        const DefaultController = defined('APP_DEFAULT_CONTROLLER') ? APP_DEFAULT_CONTROLLER : 'index';
-        const DefaultModulesDir = defined('APP_DIR_MODULES') ? APP_DIR_MODULES : 'modules/';
-        const ServerRoot = dirname($_SERVER['']);
-
         protected static function __include($Name,$Space,...$PathList) {
             if(!class_exists("{$Name}{$Space}", false)) {
-                $filename = null;
                 $Name = strtolower($Name);
                 $Space = strtolower($Space);
                 foreach($PathList as $p) {
-                    $filename = self::Path($p . $Name . '/' . $Name . '.' . $Space. '.php');
-                    if(file_exists($filename)) { break; }
-                    $filename = null;
+                    if(file_exists($filename = self::Path($p . $Name . '/' . $Name . '.' . $Space. '.php'))) {
+                        include_once($filename);
+                        return true;
+                    }
                 }
-                return !is_null($filename) ? include_once($filename) : false;
+                return false;
             }
+            return true;
         }
 
-        static public function Path() {
-
+        static public function Path($PathName='') {
+            return \Globals\Server::Path($PathName);
         }
 
         static public function Run($VirtualHost=null) {
+            echo 'dde';
         }
 
         static private $ApplicationObjects;
@@ -39,10 +38,10 @@ namespace MVC
         {
             $ControllerName = strtolower($ControllerName);
 
-            ($ControllerName !== \MVC\DefaultController) && self::__include(\MVC\DefaultController, 'controller', Application::ModulesDirectory);
+            ($ControllerName !== APP_DEFAULT_CONTROLLER) && self::__include(APP_DEFAULT_CONTROLLER, 'controller', APP_DIR_MODULES);
 
             if(!isset(self::$ApplicationObjects[(($className = $ControllerName.'Controller').Application::$VirtualHost)])) {
-                if(self::__include($ControllerName, 'controller',Application::ModulesDirectory,'/'.Application::ModulesDirectory) !== false) {
+                if(self::__include($ControllerName, 'controller',APP_DIR_MODULES,'/'.APP_DIR_MODULES) !== false) {
                     return (self::$ApplicationObjects[$className.Application::$VirtualHost] = new $className);
                 }
                 return NULL;
@@ -60,7 +59,7 @@ namespace MVC
         {
             $ModuleName = strtolower($ModuleName);
             if(!isset(self::$ApplicationObjects[(($className = $ModuleName.'Module').Application::$VirtualHost)])) {
-                if(self::__include($ModuleName, 'module',Application::ModulesDirectory,'/'.Application::ModulesDirectory) !== false) {
+                if(self::__include($ModuleName, 'module',APP_DIR_MODULESy,'/'.APP_DIR_MODULES) !== false) {
                     return (self::$ApplicationObjects[$className.Application::$VirtualHost] = new $className);
                 }
                 return NULL;

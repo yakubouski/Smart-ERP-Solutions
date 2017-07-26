@@ -5,7 +5,13 @@ include_once (__DIR__.'/erp.framework/v1/core.php');
 
 var_export([Globals\Server::$BaseDir,Globals\Server::$Domain,Globals\Request::$Method,Globals\Request::$Protocol]);
 
-\Sys\Autoload::Using(__DIR__.'/erp.engine/v1/','erp');
+\Sys\Autoload::Using(__DIR__.'/erp.engine/v1/','ERP');
+
+class SaaSApplication extends \MVC\Application {
+
+}
+
+SaaSApplication::Run();
 
 #ERP\Bus::Call('User.Auth.IsAuthorized');
 
