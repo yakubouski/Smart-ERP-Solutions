@@ -23,7 +23,7 @@ Options -Indexes -Includes -MultiViews
   RewriteCond %{REQUEST_FILENAME} .php$
   RewriteRule ^(.*)$ / [L,R]
 
-  RewriteCond %{HTTP_HOST}  "^smarterp\..*$" [NC]
+  #RewriteCond %{HTTP_HOST}  "^smarterp\..*$" [NC]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_URI} "^/(css|js)/.*\.(css|js)$"
