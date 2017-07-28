@@ -1,5 +1,6 @@
 <?php
 namespace Sys;
+
 final class Autoload {
     static private $AutoloadMap = [];
     private function __construct() {}

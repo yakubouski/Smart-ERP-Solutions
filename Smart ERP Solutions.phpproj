@@ -42,10 +42,12 @@
     <Compile Include="erp.engine\v1\generic\users\user.php" />
     <Compile Include="erp.engine\v1\bus.php" />
     <Compile Include="erp.engine\.htaccess" />
-    <Compile Include="erp.framework\v1\mvc\application.php" />
     <Compile Include="erp.framework\v1\sys\autoload.php" />
     <Compile Include="erp.framework\v1\core.php" />
     <Compile Include="erp.framework\.htaccess" />
+    <Compile Include="erp.framework\v1\sys\file.php" />
+    <Compile Include="erp.framework\v1\web\application.php" />
+    <Compile Include="erp.framework\v1\web\traits\base.php" />
     <Compile Include="smarterp\modules\index\tpls\default.tpl" />
     <Compile Include="smarterp\modules\index\index.controller.php" />
     <Compile Include="smarterp\modules\index\index.module.php" />
@@ -63,10 +65,11 @@
     <Folder Include="erp.engine\v1\generic" />
     <Folder Include="erp.engine\v1" />
     <Folder Include="erp.engine" />
-    <Folder Include="erp.framework\v1\mvc\" />
+    <Folder Include="erp.framework\v1\web\" />
     <Folder Include="erp.framework\v1\sys" />
     <Folder Include="erp.framework\v1" />
     <Folder Include="erp.framework" />
+    <Folder Include="erp.framework\v1\web\traits\" />
     <Folder Include="smarterp\modules\index\tpls" />
     <Folder Include="smarterp\modules\index" />
     <Folder Include="smarterp\modules" />

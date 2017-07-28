@@ -7,11 +7,13 @@ var_export([Globals\Server::$BaseDir,Globals\Server::$Domain,Globals\Request::$M
 
 \Sys\Autoload::Using(__DIR__.'/erp.engine/v1/','ERP');
 
-class SaaSApplication extends \MVC\Application {
+class SaaSApplication extends \Web\Application {
 
 }
 
 SaaSApplication::Run();
+
+Application();
 
 #ERP\Bus::Call('User.Auth.IsAuthorized');
 
