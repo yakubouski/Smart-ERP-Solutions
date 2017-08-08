@@ -3,19 +3,24 @@
 include_once (__DIR__.'/erp.framework/v1/core.php');
 \Sys\Autoload::Using(__DIR__.'/erp.engine/v1/','ERP');
 
-use \Globals\Request as Request;
-use \Globals\Server as Server;
+use Globals\Request;
+use Globals\Server;
 
 class SaaSApplication extends \Web\Application {
-    use \Web\UnhandledException;
+    use Web\Core\Session;
 
-    protected function __construct() {
-        echo $this->Path('/.log/'.Server::$Domain.'saas.log');
-        ini_set('error_log', $this->Path('/.log/'.Server::$Domain.'-saas.log'));
+    protected function OnInitalize() {
+        echo $this->Path('.log/'.Server::$Domain.'-saas.log');
+        //ini_set('error_log', $this->Path('.log/'.Server::$Domain.'-saas.log'));
     }
 
-    protected function OnUnhandledException($Ex) {
+    protected function OnException($Ex) {
+        
         exit;
+    }
+    
+    protected function On404($Context = null) {
+        echo $Context;
     }
 }
 

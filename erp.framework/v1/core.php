@@ -35,11 +35,12 @@ namespace Globals {
 namespace {
 
     call_user_func(function(){
-        \Globals\Server::$BaseDir = filter_input(INPUT_SERVER,'DOCUMENT_ROOT',FILTER_SANITIZE_URL);
+        \Globals\Server::$BaseDir = rtrim(filter_input(INPUT_SERVER,'DOCUMENT_ROOT',FILTER_SANITIZE_URL),'\\/');
         \Globals\Server::$Domain = filter_input(INPUT_SERVER,'SERVER_NAME',FILTER_SANITIZE_URL);
         \Globals\Request::$Method = filter_input(INPUT_SERVER,'REQUEST_METHOD',FILTER_SANITIZE_STRING);
         \Globals\Request::$Protocol = !empty(filter_input(INPUT_SERVER,'HTTPS',FILTER_SANITIZE_STRING)) ? 'https':'http';
-        \Globals\Request::$Uri = parse_url(filter_input(INPUT_SERVER,'REQUEST_URI',FILTER_SANITIZE_URL),PHP_URL_PATH);
+        \Globals\Request::$Uri = parse_url(filter_input(INPUT_SERVER,'REQUEST_URI',FILTER_SANITIZE_URL),PHP_URL_PATH); 
+        empty(\Globals\Request::$Uri) && (\Globals\Request::$Uri = '/');
 
         spl_autoload_register(function($Class) {
             $Class = str_replace('\\','/',strtolower($Class));

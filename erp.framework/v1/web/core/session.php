@@ -1,15 +1,5 @@
 <?php
-namespace Web;
-/**
- * Overload OnUnhandledException method for process unhandled exceptions
- */
-trait UnhandledException
-{
-    protected function OnUnhandledException($e) {
-        trigger_error(__METHOD__.' must be overloaded', E_USER_WARNING);
-    }
-}
-
+namespace Web\Core;
 trait Session {
 
     protected function SessionCookieParams($lifetime=0, $path='/', $domain = null, $secure = false , $httponly = false) {
@@ -25,18 +15,25 @@ trait Session {
         }
         !is_null($SessionId) && @session_id($SessionId);
 
-        if($SessionCustomHandle) {
-            $CustomHandler = new class ($this) implements \SessionHandlerInterface {
-                private $ParentThis;
-                public function __construct($Parent) { $this->ParentThis = $Parent; }
-                public function open($savePath, $sessionName){ return $this->ParentThis->OnSessionOpen($savePath, $sessionName); }
-                public function close() { return $this->ParentThis->OnSessionClose(); }
-                public function read($id) { return $this->ParentThis->OnSessionRead($id); }
-                public function write($id, $data) { return $this->ParentThis->OnSessionWrite($id,$data); }
-                public function destroy($id) { return $this->ParentThis->OnSessionDestroy($id); }
-                public function gc($maxlifetime) { return $this->ParentThis->OnSessionGC($maxlifetime); }
-            };
-            @\session_set_save_handler($CustomHandler, true);
+        if(!empty($SessionCustomHandle)) {
+            if($SessionCustomHandle===true) {
+                \session_set_save_handler((new class ($this) implements \SessionHandlerInterface {
+                    private $ParentThis;
+                    public function __construct($Parent) { $this->ParentThis = $Parent; }
+                    public function open($savePath, $sessionName){ return $this->ParentThis->OnSessionOpen($savePath, $sessionName); }
+                    public function close() { return $this->ParentThis->OnSessionClose(); }
+                    public function read($id) { return $this->ParentThis->OnSessionRead($id); }
+                    public function write($id, $data) { return $this->ParentThis->OnSessionWrite($id,$data); }
+                    public function destroy($id) { return $this->ParentThis->OnSessionDestroy($id); }
+                    public function gc($maxlifetime) { return $this->ParentThis->OnSessionGC($maxlifetime); }
+                }), true);
+            }
+            elseif(is_object($SessionCustomHandle)) {
+                \session_set_save_handler($SessionCustomHandle, true);
+            }
+            elseif(is_string($SessionCustomHandle)) {
+                \session_set_save_handler((new $SessionCustomHandle), true);
+            }
         }
         @session_start();
     }

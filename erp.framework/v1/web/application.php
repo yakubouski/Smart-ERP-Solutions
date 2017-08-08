@@ -1,11 +1,8 @@
 <?php
 namespace Web {
-    include_once __DIR__.'/traits/base.php';
-    include_once __DIR__.'/traits/on.php';
-
     class Application
     {
-        use Base;
+        use Core\Base;
 
         const DefaultController = 'index';
         const DirModules = 'modules/';
@@ -18,8 +15,8 @@ namespace Web {
         private $ObjectInstances = [];
 
         /**
-         * Получить объект по имени контролера
-         * @param string $className имя контроллера
+         * Get controller class instance
+         * @param string $ControllerName controller name
          * @return boolean|Controller
          */
         public function Controller($ControllerName)
@@ -36,10 +33,10 @@ namespace Web {
         }
 
         /**
-         * Получает объект модуля.
+         * Get module class instance
          *
-         * @param string $ModuleName имя модуля
-         * @return boolean|Module объект контроллера или NULL если контроллер не существует либо нет доступа
+         * @param string $ModuleName module name
+         * @return boolean|Module 
          */
         public function Module($ModuleName)
         {
@@ -61,9 +58,7 @@ namespace Web {
             empty($MethodName) && $MethodName = 'Default';
 
             spl_autoload_register(function($class) {
-                $class = strtolower($class);
-                (file_exists($filename = ($this->VirtualHost.DIRECTORY_SEPARATOR.self::DirModels.$class.'.model.php')) || ($filename = null));
-                !is_null($filename) && include_once($filename);
+                $this->__include(strtolower($class), 'model', self::DirModels);
             });
 
             try {
@@ -78,8 +73,14 @@ namespace Web {
                         $MethodName = 'Default';
                         $ArgsSlice = 2;
                         break;
-                    default:
-                        throw new \Exception($ControllerName . '.controller'. '.php not found in modules folder',E_USER_ERROR);
+                    default: {
+                        @ob_clean();
+                        header("HTTP/1.0 404 Not Found");
+                        header("Status: 404 Page not found");
+                        (method_exists($this, 'On404')) && call_user_func([$this, 'On404'],'Controller not found');
+                        @trigger_error('Controller '.$ControllerName.' not found',E_USER_ERROR);
+                        exit;
+                    }
                 }
                 ob_get_level() && ob_end_clean();
                 ob_start();
@@ -87,10 +88,10 @@ namespace Web {
                 ob_end_flush();
             }
             catch (\Exception $ex) {
-                (method_exists($this, 'OnUnhandledException')) && call_user_func([$this, 'OnUnhandledException'],$ex);
                 @ob_clean();
                 header("HTTP/1.0 404 Not Found");
                 header("Status: 404 Page not found");
+                (method_exists($this, 'OnException')) && call_user_func([$this, 'OnException'],$ex);
                 @trigger_error($ex->getFile().PHP_EOL."\t".$ex->getMessage(),E_USER_ERROR);
                 exit;
             }
@@ -122,7 +123,7 @@ namespace {
      * @param string $ControllerName
      * @return boolean|Web\Controller
      */
-    function Controller($ControllerName = \Web\Application\DefaultController) {
+    function Controller($ControllerName = Web\Application\DefaultController) {
         return Application()->Controller($ControllerName);
     }
     /**

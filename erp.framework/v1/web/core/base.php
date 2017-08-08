@@ -1,7 +1,18 @@
 <?php
-namespace Web;
+namespace Web\Core;
+
+trait On {
+    protected function OnException($e) { trigger_error(__METHOD__.' must be overloaded', E_USER_NOTICE); }
+    
+    protected function On404($Context=null) { trigger_error(__METHOD__.' must be overloaded', E_USER_NOTICE); }
+    
+    protected function OnInitalize() { trigger_error(__METHOD__.' must be overloaded', E_USER_NOTICE); }
+}
 
 trait Base {
+    
+    use On;
+    
     protected $VirtualHost;
 
     protected function __include($Name,$Space,...$PathList) {
@@ -30,7 +41,7 @@ trait Base {
     protected function __routing() {
         throw new \Exception('Application not configured properly. Method __routing must be overload');
     }
-
+    
     public function Path($PathName='') {
         return $this->__pathname($PathName);
     }
@@ -54,6 +65,7 @@ trait Base {
             throw new \Exception('Application not running. Run app __CLASS__::Run(...)');
         }
         $App->VirtualHost = !empty($VirtualHost) ? (trim($VirtualHost,'\\/').DIRECTORY_SEPARATOR) : '';
+        $App->OnInitalize();
         $App->__routing();
     }
 }
