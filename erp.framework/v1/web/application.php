@@ -7,6 +7,7 @@ namespace Web {
         const DefaultController = 'index';
         const DirModules = 'modules/';
         const DirModels = 'models/';
+        const DirTemplateCompile = '.compile/';
 
         /**
          * Objects intances cache
@@ -102,8 +103,12 @@ namespace Web {
 
     }
 
-    class Controller {
-
+    abstract class Controller {
+        abstract public function OnDefault();
+        
+        protected function template($TplFile=null,$TplArgs = []) {
+            return \Template($TplFile,$TplArgs);
+        }
     }
 }
 
@@ -133,5 +138,15 @@ namespace {
      */
     function Module($ModuleName)  {
         return Application()->Module($ModuleName);
+    }
+    
+    /**
+     * Get Template render engine
+     * @param string $TplName template pathname
+     * @param array $TplArgs template args
+     * @return \Web\Template
+     */
+    function Template($TplName=null,$TplArgs=[]) {
+        return new \Web\Template($TplName, $TplArgs);
     }
 }

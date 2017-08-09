@@ -1,7 +1,6 @@
 <?php
 !defined('DEBUG') && define ('DEBUG',getenv('DEBUG')??0);
 include_once (__DIR__.'/erp.framework/v1/core.php');
-\Sys\Autoload::Using(__DIR__.'/erp.engine/v1/','ERP');
 
 use Globals\Request;
 use Globals\Server;
@@ -10,8 +9,9 @@ class SaaSApplication extends \Web\Application {
     use Web\Core\Session;
 
     protected function OnInitalize() {
-        echo $this->Path('.log/'.Server::$Domain.'-saas.log');
+        //echo $this->Path('.log/'.Server::$Domain.'-saas.log');
         //ini_set('error_log', $this->Path('.log/'.Server::$Domain.'-saas.log'));
+        Web\Template::Using(Path('/widgets/'));
     }
 
     protected function OnException($Ex) {
@@ -24,9 +24,8 @@ class SaaSApplication extends \Web\Application {
     }
 }
 
-SaaSApplication::Run();
+SaaSApplication::Run('tests/virtual');
 
-Application();
 
 #ERP\Bus::Call('User.Auth.IsAuthorized');
 

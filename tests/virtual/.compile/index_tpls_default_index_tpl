@@ -1,0 +1,33 @@
+<?php $this->__(['html','page'],['url'=>'/',],1,'<html:page url=\'/\'>');if(empty($this->__skip())){  
+    
+ $this->__(['ui','control','tabs'],['class'=>"default",'name'=>'er\fer','default'=>"1",],1,'<ui:control:tabs class="default" name=\'er\fer\' default="1">');if(empty($this->__skip())){  
+        
+ $this->__(['tabs','item'],['id'=>'sfewrfwer',],0,'<tabs:item id=\'sfewrfwer\' />'); 
+    
+ } $this->__(['ui','control','tabs'],[],-1,'</ui:control:tabs>'); 
+    
+    
+ $this->__(['ui','control','tabs'],['class'=>"default",'name'=>'er\fer','default'=>"1",],1,'<ui:control:tabs class="default" name=\'er\fer\' default="1">');if(empty($this->__skip())){  
+        
+ $this->__(['tabs','item'],['id'=>'sfewrfwer',],0,'<tabs:item id=\'sfewrfwer\' />'); 
+    
+ } $this->__(['ui','control','tabs'],[],-1,'</ui:control:tabs>'); 
+
+ } $this->__(['html','page'],[],-1,'</html:page>'); 
+
+ $this->__(['html','page'],['url'=>'/tnx/',],1,'<html:page url=\'/tnx/\'>');if(empty($this->__skip())){  
+    
+ $this->__(['ui','control','tabs'],['class'=>"default",'name'=>'er\fer','default'=>"1",],1,'<ui:control:tabs class="default" name=\'er\fer\' default="1">');if(empty($this->__skip())){  
+        
+ $this->__(['tabs','item'],['id'=>'sfe  fvertb ertb rethewrfwer',],0,'<tabs:item id=\'sfe  fvertb ertb rethewrfwer\' />'); 
+    
+ } $this->__(['ui','control','tabs'],[],-1,'</ui:control:tabs>'); 
+    
+    
+ $this->__(['ui','control','tabs'],['class'=>"default",'name'=>'er\fer','default'=>"1",],1,'<ui:control:tabs class="default" name=\'er\fer\' default="1">');if(empty($this->__skip())){  
+        
+ $this->__(['tabs','item'],['id'=>'sfewrfwer',],0,'<tabs:item id=\'sfewrfwer\' />'); 
+    
+ } $this->__(['ui','control','tabs'],[],-1,'</ui:control:tabs>'); 
+
+ } $this->__(['html','page'],[],-1,'</html:page>'); ?>

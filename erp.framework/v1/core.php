@@ -33,9 +33,9 @@ namespace Globals {
     }
 }
 namespace {
-
+    require_once 'sys/file.php';
     call_user_func(function(){
-        \Globals\Server::$BaseDir = rtrim(filter_input(INPUT_SERVER,'DOCUMENT_ROOT',FILTER_SANITIZE_URL),'\\/');
+        \Globals\Server::$BaseDir = rtrim(filter_input(INPUT_SERVER,'DOCUMENT_ROOT',FILTER_SANITIZE_STRING),'\\/');
         \Globals\Server::$Domain = filter_input(INPUT_SERVER,'SERVER_NAME',FILTER_SANITIZE_URL);
         \Globals\Request::$Method = filter_input(INPUT_SERVER,'REQUEST_METHOD',FILTER_SANITIZE_STRING);
         \Globals\Request::$Protocol = !empty(filter_input(INPUT_SERVER,'HTTPS',FILTER_SANITIZE_STRING)) ? 'https':'http';
@@ -46,9 +46,6 @@ namespace {
             $Class = str_replace('\\','/',strtolower($Class));
             if(file_exists($filename = (__DIR__.DIRECTORY_SEPARATOR.$Class.'.php'))) {
                 include_once ($filename);
-            }
-            else {
-                \Sys\Autoload::Import($Class);
             }
         });
     });

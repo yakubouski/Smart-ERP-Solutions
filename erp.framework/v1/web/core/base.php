@@ -64,7 +64,7 @@ trait Base {
         if(is_null($App = self::Instance())) {
             throw new \Exception('Application not running. Run app __CLASS__::Run(...)');
         }
-        $App->VirtualHost = !empty($VirtualHost) ? (trim($VirtualHost,'\\/').DIRECTORY_SEPARATOR) : '';
+        $App->VirtualHost = !empty($VirtualHost) ? (trim($VirtualHost,'\\/')) : '';
         $App->OnInitalize();
         $App->__routing();
     }
