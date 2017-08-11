@@ -39,7 +39,7 @@ namespace {
         \Globals\Server::$Domain = filter_input(INPUT_SERVER,'SERVER_NAME',FILTER_SANITIZE_URL);
         \Globals\Request::$Method = filter_input(INPUT_SERVER,'REQUEST_METHOD',FILTER_SANITIZE_STRING);
         \Globals\Request::$Protocol = !empty(filter_input(INPUT_SERVER,'HTTPS',FILTER_SANITIZE_STRING)) ? 'https':'http';
-        \Globals\Request::$Uri = parse_url(filter_input(INPUT_SERVER,'REQUEST_URI',FILTER_SANITIZE_URL),PHP_URL_PATH); 
+        \Globals\Request::$Uri = pathinfo(filter_input(INPUT_SERVER,'REQUEST_URI',FILTER_SANITIZE_URL),PATHINFO_DIRNAME);
         empty(\Globals\Request::$Uri) && (\Globals\Request::$Uri = '/');
 
         spl_autoload_register(function($Class) {

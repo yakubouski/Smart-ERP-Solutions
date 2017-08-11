@@ -2,40 +2,44 @@
 namespace Web
 {
     trait TemplateParser {
-        
+
         private $__DOM = [];
         private static $WidgetsPaths;
         private static $WidgetsClass;
-        
+
         static public function Using(...$WidgetsPaths) {
             self::$WidgetsPaths = array_merge(!empty(self::$WidgetsPaths) ? self::$WidgetsPaths : [], $WidgetsPaths);
         }
-        
+
+        static public function Register(array $WidgetsClasses) {
+            self::$WidgetsClass = array_merge(!empty(self::$WidgetsClass) ? self::$WidgetsClass : [], $WidgetsClasses);
+        }
+
         protected function __class($class) {
-            
-            if(isset(self::$WidgetsClass[$class])) return (new self::$WidgetsClass[$class] ($this));
-            
+
+            if(isset(self::$WidgetsClass[$class])) return (new self::$WidgetsClass[$class] ());
+
             foreach(self::$WidgetsPaths as $p) {
                 if(file_exists($filename = Directory($p).$class.'.php')) {
-                    
+
                     $class_name = include_once ($filename);
                     (empty($class_name) || $class_name === 1) && $class_name = $class;
                     self::$WidgetsClass[$class] = $class_name;
-                    
-                    return (new $class_name ($this));
+
+                    return (new $class_name ());
                 }
             }
-            
+
             return null;
         }
-        
+
         private function __escape(&$str) {
             return str_replace(["'","\n","\t","\r","\0"],["\'",'\n','\t','\r',''], $str);
         }
         private function __unescape(&$str) {
             return str_replace(["\'",'\n','\t','\r'],["'","\n","\t","\r"], $str);
         }
-        
+
         protected function __parse($Content) {
             return empty(self::$WidgetsPaths) ? $Content : preg_replace_callback_array([
                 '%<(/?)(\w+):([\w:]+)(?:\s+(.*?))?\s*(/?)(?!>[^<]+>)>%s'=> function($m) {
@@ -51,7 +55,7 @@ namespace Web
                         return $m[1];
                 }], $Content);
         }
-        
+
         private function __pop()
         {
             return array_pop($this->__DOM);
@@ -64,7 +68,7 @@ namespace Web
         {
             return @end($this->__DOM);
         }
-        
+
         private function __skip() {
             if(!empty($object = $this->__current())) {
                 $method = $object[2];
@@ -74,7 +78,7 @@ namespace Web
             }
             return 0;
         }
-        
+
         private function __render($method,&$Object,&$Args,&$State) {
             if($State == 0) {
                 if(method_exists($Object,$fn = $method) || method_exists($Object,$fn = $method.'End')) {
@@ -107,7 +111,7 @@ namespace Web
             }
             return false;
         }
-        
+
         protected function __($Class,$Args,$State,$Src) {
             if(empty($object = $this->__current()) || !$this->__render('On'.implode('',$Class),$object[0],$Args,$State)) {
                 if(empty($object = $this->__class(implode('\\',$Class))) || !$this->__render('On',$object,$Args,$State)) {
@@ -116,11 +120,11 @@ namespace Web
             }
         }
     }
-    
+
     class Template
     {
         use TemplateParser;
-        
+
         private $TplArgs,$TplFileName;
         public function __construct($TplFileName=null,$TplArgs=[]) {
             $this->TplArgs = $TplArgs;
@@ -130,8 +134,8 @@ namespace Web
         public function Display($TplFileName=null,$TplArgs=[]) {
             print $this->Fetch($TplFileName,$TplArgs);
         }
-        public function Fetch($TplFileName=null,$TplArgs=[]) { 
-            return $this->__compile($TplFileName??$this->TplFileName, empty($TplArgs) ? $this->TplArgs :  array_merge($this->TplArgs??[],$TplArgs) ); 
+        public function Fetch($TplFileName=null,$TplArgs=[]) {
+            return $this->__compile($TplFileName??$this->TplFileName, empty($TplArgs) ? $this->TplArgs :  array_merge($this->TplArgs??[],$TplArgs) );
         }
         public function Export($ExportFileName,$ExportMimeType,$TplFileName=null,$TplArgs=[]){
             ini_set('short_open_tag', 0);
@@ -152,7 +156,7 @@ namespace Web
             exit;
         }
         public function __toString() { return $this->Fetch($this->TplFileName,$this->TplArgs); }
-        
+
         protected function __compile($TplFileName,$TplArgs) {
             if(($ModTime = FileTime($SrcFile = Application::DirModules.$TplFileName))) {
                 if($ModTime >= FileTime($CompileFileName = Application::DirTemplateCompile.preg_replace('/[\W-]+/u', '_', $TplFileName))) {
@@ -176,10 +180,8 @@ namespace Web
 
 namespace
 {
-    abstract class Widget 
+    abstract class Widget
     {
-        private $Tpl;
-        public function __construct(\Web\Template $tpl) { $this->Tpl = $tpl; }
         protected function tpl($tpl,$args=[]) {
             ob_start();
             try {

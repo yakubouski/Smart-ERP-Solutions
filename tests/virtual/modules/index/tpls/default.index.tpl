@@ -1,18 +1,25 @@
-<html:page url='/'>
-    <ui:control:tabs class="default" name='er\fer' default="1">
-        <tabs:item id='sfewrfwer' />
-    </ui:control:tabs>
-    
-    <ui:control:tabs class="default" name='er\fer' default="1">
-        <tabs:item id='sfewrfwer' />
-    </ui:control:tabs>
+<style:less name="default.css">
+    body {
+    }
+</style:less>
+
+<manifest:json>
+
+</manifest:json>
+
+
+<html:page url='/' 
+           style-less="default.css" 
+           meta-title="title" meta-description="" meta-keywords="" meta-author="" meta-copyright="" meta-charset="" meta-viewport=""
+           rel-canonical="" rel-author="" rel-publisher="" rel-icon="" rel-icon-128x128="">
+    <header:menu>
+        <menu:item action-link="" action-dialog="" icon-svg="">Главная</menu:item>
+    </header:menu>
+    <header:title logo-phone="" logo-tablet="" logo-desktop=""></header:title>
+       
 </html:page>
+
+
 <html:page url='/tnx/'>
-    <ui:control:tabs class="default" name='er\fer' default="1">
-        <tabs:item id='sfe  fvertb ertb rethewrfwer' />
-    </ui:control:tabs>
     
-    <ui:control:tabs class="default" name='er\fer' default="1">
-        <tabs:item id='sfewrfwer' />
-    </ui:control:tabs>
 </html:page>
