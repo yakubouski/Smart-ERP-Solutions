@@ -1,0 +1,2271 @@
+version: 1
+creator: xdebug 2.4.0RC3
+cmd: C:\Users\iroke\Desktop\Projects\Web\Smart ERP Solutions\smarterp.php
+part: 1
+positions: line
+
+events: Time
+
+fl=(1) php:internal
+fn=(1) php::getenv
+2 14
+
+fl=(1)
+fn=(2) php::define
+2 3
+
+fl=(1)
+fn=(2)
+3 3
+
+fl=(1)
+fn=(2)
+4 2
+
+fl=(1)
+fn=(2)
+5 1
+
+fl=(2) C:\Users\iroke\Desktop\Projects\Web\Smart ERP Solutions\erp.framework\v1\sys\file.php
+fn=(3) require_once::C:\Users\iroke\Desktop\Projects\Web\Smart ERP Solutions\erp.framework\v1\sys\file.php
+1 450
+cfl=(1)
+cfn=(2)
+calls=1 0 0
+3 3
+cfl=(1)
+cfn=(2)
+calls=1 0 0
+4 2
+cfl=(1)
+cfn=(2)
+calls=1 0 0
+5 1
+
+fl=(1)
+fn=(4) php::filter_input
+38 10
+
+fl=(1)
+fn=(5) php::rtrim
+38 0
+
+fl=(1)
+fn=(4)
+39 3
+
+fl=(1)
+fn=(4)
+40 2
+
+fl=(1)
+fn=(4)
+41 0
+
+fl=(1)
+fn=(4)
+42 1
+
+fl=(1)
+fn=(6) php::pathinfo
+42 4
+
+fl=(1)
+fn=(7) php::spl_autoload_register
+50 4
+
+fl=(3) C:\Users\iroke\Desktop\Projects\Web\Smart ERP Solutions\erp.framework\v1\core.php
+fn=(8) {closure:C:\Users\iroke\Desktop\Projects\Web\Smart ERP Solutions\erp.framework\v1\core.php:37-51}
+37 194
+cfl=(1)
+cfn=(4)
+calls=1 0 0
+38 10
+cfl=(1)
+cfn=(5)
+calls=1 0 0
+38 0
+cfl=(1)
+cfn=(4)
+calls=1 0 0
+39 3
+cfl=(1)
+cfn=(4)
+calls=1 0 0
+40 2
+cfl=(1)
+cfn=(4)
+calls=1 0 0
+41 0
+cfl=(1)
+cfn=(4)
+calls=1 0 0
+42 1
+cfl=(1)
+cfn=(6)
+calls=1 0 0
+42 4
+cfl=(1)
+cfn=(7)
+calls=1 0 0
+50 4
+
+fl=(3)
+fn=(9) include_once::C:\Users\iroke\Desktop\Projects\Web\Smart ERP Solutions\erp.framework\v1\core.php
+1 3146
+cfl=(2)
+cfn=(3)
+calls=1 0 0
+36 457
+cfl=(3)
+cfn=(8)
+calls=1 0 0
+51 221
+
+fl=(1)
+fn=(10) php::strtolower
+46 3
+
+fl=(1)
+fn=(11) php::str_replace
+46 2
+
+fl=(1)
+fn=(12) php::file_exists
+47 119
+
+fl=(1)
+fn=(10)
+46 1
+
+fl=(1)
+fn=(11)
+46 2
+
+fl=(1)
+fn=(12)
+47 72
+
+fl=(4) C:\Users\iroke\Desktop\Projects\Web\Smart ERP Solutions\erp.framework\v1\web\core\base.php
+fn=(13) include_once::C:\Users\iroke\Desktop\Projects\Web\Smart ERP Solutions\erp.framework\v1\web\core\base.php
+1 10
+
+fl=(3)
+fn=(14) {closure:C:\Users\iroke\Desktop\Projects\Web\Smart ERP Solutions\erp.framework\v1\core.php:45-50}
+45 500
+cfl=(1)
+cfn=(10)
+calls=1 0 0
+46 1
+cfl=(1)
+cfn=(11)
+calls=1 0 0
+46 2
+cfl=(1)
+cfn=(12)
+calls=1 0 0
+47 72
+cfl=(4)
+cfn=(13)
+calls=1 0 0
+48 10
+
+fl=(1)
+fn=(15) php::spl_autoload_call
+5 43
+cfl=(3)
+cfn=(14)
+calls=1 0 0
+5 586
+
+fl=(5) C:\Users\iroke\Desktop\Projects\Web\Smart ERP Solutions\erp.framework\v1\web\application.php
+fn=(16) include_once::C:\Users\iroke\Desktop\Projects\Web\Smart ERP Solutions\erp.framework\v1\web\application.php
+1 37
+cfl=(1)
+cfn=(15)
+calls=1 0 0
+5 630
+
+fl=(3)
+fn=(14)
+45 763
+cfl=(1)
+cfn=(10)
+calls=1 0 0
+46 3
+cfl=(1)
+cfn=(11)
+calls=1 0 0
+46 2
+cfl=(1)
+cfn=(12)
+calls=1 0 0
+47 119
+cfl=(5)
+cfn=(16)
+calls=1 0 0
+48 668
+
+fl=(1)
+fn=(15)
+8 36
+cfl=(3)
+cfn=(14)
+calls=1 0 0
+8 1555
+
+fl=(1)
+fn=(10)
+46 2
+
+fl=(1)
+fn=(11)
+46 0
+
+fl=(1)
+fn=(12)
+47 81
+
+fl=(6) C:\Users\iroke\Desktop\Projects\Web\Smart ERP Solutions\erp.framework\v1\web\core\session.php
+fn=(17) include_once::C:\Users\iroke\Desktop\Projects\Web\Smart ERP Solutions\erp.framework\v1\web\core\session.php
+1 2
+
+fl=(3)
+fn=(14)
+45 485
+cfl=(1)
+cfn=(10)
+calls=1 0 0
+46 2
+cfl=(1)
+cfn=(11)
+calls=1 0 0
+46 0
+cfl=(1)
+cfn=(12)
+calls=1 0 0
+47 81
+cfl=(6)
+cfn=(17)
+calls=1 0 0
+48 2
+
+fl=(1)
+fn=(15)
+9 54
+cfl=(3)
+cfn=(14)
+calls=1 0 0
+9 571
+
+fl=(1)
+fn=(18) php::is_null
+54 0
+
+fl=(1)
+fn=(19) php::get_called_class
+54 0
+
+fl=(4)
+fn=(20) Web\Application::Instance
+53 45
+cfl=(1)
+cfn=(18)
+calls=1 0 0
+54 0
+cfl=(1)
+cfn=(19)
+calls=1 0 0
+54 0
+
+fl=(1)
+fn=(18)
+64 0
+
+fl=(1)
+fn=(21) php::trim
+67 0
+
+fl=(1)
+fn=(10)
+46 0
+
+fl=(1)
+fn=(11)
+46 2
+
+fl=(1)
+fn=(12)
+47 69
+
+fl=(7) C:\Users\iroke\Desktop\Projects\Web\Smart ERP Solutions\erp.framework\v1\web\template.php
+fn=(22) include_once::C:\Users\iroke\Desktop\Projects\Web\Smart ERP Solutions\erp.framework\v1\web\template.php
+1 12
+
+fl=(3)
+fn=(14)
+45 912
+cfl=(1)
+cfn=(10)
+calls=1 0 0
+46 0
+cfl=(1)
+cfn=(11)
+calls=1 0 0
+46 2
+cfl=(1)
+cfn=(12)
+calls=1 0 0
+47 69
+cfl=(7)
+cfn=(22)
+calls=1 0 0
+48 12
+
+fl=(1)
+fn=(15)
+14 117
+cfl=(3)
+cfn=(14)
+calls=1 0 0
+14 998
+
+fl=(1)
+fn=(18)
+54 0
+
+fl=(4)
+fn=(20)
+53 22
+cfl=(1)
+cfn=(18)
+calls=1 0 0
+54 0
+
+fl=(5)
+fn=(23) Application
+120 24
+cfl=(4)
+cfn=(20)
+calls=1 0 0
+121 22
+
+fl=(4)
+fn=(24) Web\Application->__pathname
+33 6
+
+fl=(4)
+fn=(25) Web\Application->Path
+45 21
+cfl=(4)
+cfn=(24)
+calls=1 0 0
+46 6
+
+fl=(3)
+fn=(26) Path
+58 46
+cfl=(5)
+cfn=(23)
+calls=1 0 0
+59 46
+cfl=(4)
+cfn=(25)
+calls=1 0 0
+59 28
+
+fl=(1)
+fn=(27) php::array_merge
+11 2
+
+fl=(7)
+fn=(28) Web\Template::Using
+10 21
+cfl=(1)
+cfn=(27)
+calls=1 0 0
+11 2
+
+fl=(8) C:\Users\iroke\Desktop\Projects\Web\Smart ERP Solutions\smarterp.php
+fn=(29) SaaSApplication->OnInitalize
+11 98
+cfl=(1)
+cfn=(15)
+calls=1 0 0
+14 1115
+cfl=(3)
+cfn=(26)
+calls=1 0 0
+14 121
+cfl=(7)
+cfn=(28)
+calls=1 0 0
+14 24
+
+fl=(1)
+fn=(30) php::explode
+55 2
+
+fl=(1)
+fn=(10)
+25 0
+
+fl=(1)
+fn=(31) php::class_exists
+19 0
+
+fl=(1)
+fn=(10)
+20 0
+
+fl=(1)
+fn=(10)
+21 0
+
+fl=(4)
+fn=(24)
+33 9
+
+fl=(4)
+fn=(25)
+45 17
+cfl=(4)
+cfn=(24)
+calls=1 0 0
+46 9
+
+fl=(1)
+fn=(12)
+23 114
+
+fl=(9) C:\Users\iroke\Desktop\Projects\Web\Smart ERP Solutions\tests\virtual\modules\index\index.controller.php
+fn=(32) include_once::C:\Users\iroke\Desktop\Projects\Web\Smart ERP Solutions\tests\virtual\modules\index\index.controller.php
+1 3
+
+fl=(4)
+fn=(33) Web\Application->__include
+18 444
+cfl=(1)
+cfn=(31)
+calls=1 0 0
+19 0
+cfl=(1)
+cfn=(10)
+calls=1 0 0
+20 0
+cfl=(1)
+cfn=(10)
+calls=1 0 0
+21 0
+cfl=(4)
+cfn=(25)
+calls=1 0 0
+23 26
+cfl=(1)
+cfn=(12)
+calls=1 0 0
+23 114
+cfl=(9)
+cfn=(32)
+calls=1 0 0
+24 3
+
+fl=(5)
+fn=(34) Web\Application->Controller
+23 77
+cfl=(1)
+cfn=(10)
+calls=1 0 0
+25 0
+cfl=(4)
+cfn=(33)
+calls=1 0 0
+28 591
+
+fl=(1)
+fn=(7)
+63 5
+
+fl=(1)
+fn=(18)
+68 0
+
+fl=(1)
+fn=(18)
+72 0
+
+fl=(1)
+fn=(35) php::method_exists
+72 0
+
+fl=(1)
+fn=(36) php::ob_get_level
+86 0
+
+fl=(1)
+fn=(37) php::ob_end_clean
+86 1
+
+fl=(1)
+fn=(38) php::ob_start
+87 2
+
+fl=(1)
+fn=(39) php::array_slice
+88 0
+
+fl=(7)
+fn=(40) Web\Template->__construct
+129 5
+
+fl=(5)
+fn=(41) Template
+149 66
+cfl=(7)
+cfn=(40)
+calls=1 0 0
+150 5
+
+fl=(1)
+fn=(18)
+164 0
+
+fl=(1)
+fn=(18)
+54 0
+
+fl=(4)
+fn=(20)
+53 17
+cfl=(1)
+cfn=(18)
+calls=1 0 0
+54 0
+
+fl=(5)
+fn=(23)
+120 22
+cfl=(4)
+cfn=(20)
+calls=1 0 0
+121 17
+
+fl=(4)
+fn=(24)
+33 5
+
+fl=(4)
+fn=(25)
+45 19
+cfl=(4)
+cfn=(24)
+calls=1 0 0
+46 5
+
+fl=(3)
+fn=(26)
+58 38
+cfl=(5)
+cfn=(23)
+calls=1 0 0
+59 40
+cfl=(4)
+cfn=(25)
+calls=1 0 0
+59 25
+
+fl=(1)
+fn=(42) php::filemtime
+165 72
+
+fl=(2)
+fn=(43) Sys\File\Time
+163 65
+cfl=(1)
+cfn=(18)
+calls=1 0 0
+164 0
+cfl=(3)
+cfn=(26)
+calls=1 0 0
+165 103
+cfl=(1)
+cfn=(42)
+calls=1 0 0
+165 72
+
+fl=(3)
+fn=(44) FileTime
+101 29
+cfl=(2)
+cfn=(43)
+calls=1 0 0
+102 241
+
+fl=(1)
+fn=(45) php::preg_replace
+162 7
+
+fl=(1)
+fn=(18)
+164 0
+
+fl=(1)
+fn=(18)
+54 0
+
+fl=(4)
+fn=(20)
+53 16
+cfl=(1)
+cfn=(18)
+calls=1 0 0
+54 0
+
+fl=(5)
+fn=(23)
+120 20
+cfl=(4)
+cfn=(20)
+calls=1 0 0
+121 16
+
+fl=(4)
+fn=(24)
+33 4
+
+fl=(4)
+fn=(25)
+45 31
+cfl=(4)
+cfn=(24)
+calls=1 0 0
+46 4
+
+fl=(3)
+fn=(26)
+58 42
+cfl=(5)
+cfn=(23)
+calls=1 0 0
+59 36
+cfl=(4)
+cfn=(25)
+calls=1 0 0
+59 36
+
+fl=(1)
+fn=(42)
+165 59
+
+fl=(2)
+fn=(43)
+163 57
+cfl=(1)
+cfn=(18)
+calls=1 0 0
+164 0
+cfl=(3)
+cfn=(26)
+calls=1 0 0
+165 115
+cfl=(1)
+cfn=(42)
+calls=1 0 0
+165 59
+
+fl=(3)
+fn=(44)
+101 27
+cfl=(2)
+cfn=(43)
+calls=1 0 0
+102 233
+
+fl=(1)
+fn=(38)
+166 1
+
+fl=(1)
+fn=(46) php::extract
+168 0
+
+fl=(1)
+fn=(18)
+54 1
+
+fl=(4)
+fn=(20)
+53 14
+cfl=(1)
+cfn=(18)
+calls=1 0 0
+54 1
+
+fl=(5)
+fn=(23)
+120 21
+cfl=(4)
+cfn=(20)
+calls=1 0 0
+121 15
+
+fl=(4)
+fn=(24)
+33 5
+
+fl=(4)
+fn=(25)
+45 16
+cfl=(4)
+cfn=(24)
+calls=1 0 0
+46 5
+
+fl=(3)
+fn=(26)
+58 38
+cfl=(5)
+cfn=(23)
+calls=1 0 0
+59 37
+cfl=(4)
+cfn=(25)
+calls=1 0 0
+59 21
+
+fl=(1)
+fn=(47) php::end
+69 0
+
+fl=(7)
+fn=(48) Web\Template->__current
+67 28
+cfl=(1)
+cfn=(47)
+calls=1 0 0
+69 0
+
+fl=(1)
+fn=(49) php::implode
+117 0
+
+fl=(1)
+fn=(50) php::mb_strlen
+63 2
+
+fl=(3)
+fn=(51) Directory
+62 21
+cfl=(1)
+cfn=(50)
+calls=1 0 0
+63 2
+
+fl=(1)
+fn=(12)
+23 60
+
+fl=(1)
+fn=(27)
+15 2
+
+fl=(7)
+fn=(52) Web\Template::Register
+14 28
+cfl=(1)
+cfn=(27)
+calls=1 0 0
+15 2
+
+fl=(10) C:\Users\iroke\Desktop\Projects\Web\Smart ERP Solutions\widgets\html\page.php
+fn=(53) include_once::C:\Users\iroke\Desktop\Projects\Web\Smart ERP Solutions\widgets\html\page.php
+1 26
+cfl=(7)
+cfn=(52)
+calls=1 0 0
+57 30
+
+fl=(7)
+fn=(54) Web\Template->__class
+18 396
+cfl=(3)
+cfn=(51)
+calls=1 0 0
+23 24
+cfl=(1)
+cfn=(12)
+calls=1 0 0
+23 60
+cfl=(10)
+cfn=(53)
+calls=1 0 0
+25 57
+
+fl=(1)
+fn=(35)
+90 1
+
+fl=(1)
+fn=(35)
+95 0
+
+fl=(10)
+fn=(55) WidgetsV1\Page->OnBegin
+33 0
+
+fl=(1)
+fn=(56) php::call_user_func:{C:\Users\iroke\Desktop\Projects\Web\Smart ERP Solutions\erp.framework\v1\web\template.php:96}
+96 19
+cfl=(10)
+cfn=(55)
+calls=1 0 0
+96 0
+
+fl=(7)
+fn=(57) Web\Template->__push
+63 3
+
+fl=(1)
+fn=(38)
+98 2
+
+fl=(7)
+fn=(58) Web\Template->__render
+82 97
+cfl=(1)
+cfn=(35)
+calls=1 0 0
+90 1
+cfl=(1)
+cfn=(35)
+calls=1 0 0
+95 0
+cfl=(1)
+cfn=(56)
+calls=1 0 0
+96 20
+cfl=(7)
+cfn=(57)
+calls=1 0 0
+97 3
+cfl=(1)
+cfn=(38)
+calls=1 0 0
+98 2
+
+fl=(7)
+fn=(59) Web\Template->__
+115 185
+cfl=(7)
+cfn=(48)
+calls=1 0 0
+116 28
+cfl=(1)
+cfn=(49)
+calls=1 0 0
+117 0
+cfl=(7)
+cfn=(54)
+calls=1 0 0
+117 538
+cfl=(7)
+cfn=(58)
+calls=1 0 0
+117 126
+
+fl=(1)
+fn=(47)
+69 0
+
+fl=(7)
+fn=(48)
+67 17
+cfl=(1)
+cfn=(47)
+calls=1 0 0
+69 0
+
+fl=(1)
+fn=(35)
+75 0
+
+fl=(10)
+fn=(60) WidgetsV1\Page->OnSkip
+43 2
+
+fl=(1)
+fn=(61) php::call_user_func:{C:\Users\iroke\Desktop\Projects\Web\Smart ERP Solutions\erp.framework\v1\web\template.php:76}
+76 17
+cfl=(10)
+cfn=(60)
+calls=1 0 0
+76 2
+
+fl=(7)
+fn=(62) Web\Template->__skip
+72 65
+cfl=(7)
+cfn=(48)
+calls=1 0 0
+73 18
+cfl=(1)
+cfn=(35)
+calls=1 0 0
+75 0
+cfl=(1)
+cfn=(61)
+calls=1 0 0
+76 20
+
+fl=(1)
+fn=(47)
+69 0
+
+fl=(7)
+fn=(48)
+67 15
+cfl=(1)
+cfn=(47)
+calls=1 0 0
+69 0
+
+fl=(1)
+fn=(49)
+116 0
+
+fl=(1)
+fn=(35)
+90 0
+
+fl=(1)
+fn=(35)
+95 0
+
+fl=(7)
+fn=(58)
+82 34
+cfl=(1)
+cfn=(35)
+calls=1 0 0
+90 0
+cfl=(1)
+cfn=(35)
+calls=1 0 0
+95 0
+
+fl=(1)
+fn=(49)
+117 0
+
+fl=(1)
+fn=(50)
+63 1
+
+fl=(3)
+fn=(51)
+62 18
+cfl=(1)
+cfn=(50)
+calls=1 0 0
+63 1
+
+fl=(1)
+fn=(12)
+23 49
+
+fl=(7)
+fn=(54)
+18 43
+cfl=(3)
+cfn=(51)
+calls=1 0 0
+23 20
+cfl=(1)
+cfn=(12)
+calls=1 0 0
+23 49
+
+fl=(1)
+fn=(11)
+40 1
+
+fl=(7)
+fn=(63) Web\Template->__unescape
+39 24
+cfl=(1)
+cfn=(11)
+calls=1 0 0
+40 1
+
+fl=(7)
+fn=(59)
+115 134
+cfl=(7)
+cfn=(48)
+calls=1 0 0
+116 16
+cfl=(1)
+cfn=(49)
+calls=1 0 0
+116 0
+cfl=(7)
+cfn=(58)
+calls=1 0 0
+116 35
+cfl=(1)
+cfn=(49)
+calls=1 0 0
+117 0
+cfl=(7)
+cfn=(54)
+calls=1 0 0
+117 113
+cfl=(7)
+cfn=(63)
+calls=1 0 0
+118 25
+
+fl=(1)
+fn=(47)
+69 0
+
+fl=(7)
+fn=(48)
+67 80
+cfl=(1)
+cfn=(47)
+calls=1 0 0
+69 0
+
+fl=(1)
+fn=(35)
+75 0
+
+fl=(10)
+fn=(60)
+43 2
+
+fl=(1)
+fn=(61)
+76 34
+cfl=(10)
+cfn=(60)
+calls=1 0 0
+76 2
+
+fl=(7)
+fn=(62)
+72 139
+cfl=(7)
+cfn=(48)
+calls=1 0 0
+73 81
+cfl=(1)
+cfn=(35)
+calls=1 0 0
+75 0
+cfl=(1)
+cfn=(61)
+calls=1 0 0
+76 36
+
+fl=(1)
+fn=(47)
+69 0
+
+fl=(7)
+fn=(48)
+67 28
+cfl=(1)
+cfn=(47)
+calls=1 0 0
+69 0
+
+fl=(1)
+fn=(49)
+116 1
+
+fl=(1)
+fn=(35)
+90 2
+
+fl=(1)
+fn=(35)
+95 0
+
+fl=(7)
+fn=(58)
+82 85
+cfl=(1)
+cfn=(35)
+calls=1 0 0
+90 2
+cfl=(1)
+cfn=(35)
+calls=1 0 0
+95 0
+
+fl=(1)
+fn=(49)
+117 1
+
+fl=(1)
+fn=(50)
+63 3
+
+fl=(3)
+fn=(51)
+62 33
+cfl=(1)
+cfn=(50)
+calls=1 0 0
+63 3
+
+fl=(1)
+fn=(12)
+23 102
+
+fl=(7)
+fn=(54)
+18 82
+cfl=(3)
+cfn=(51)
+calls=1 0 0
+23 36
+cfl=(1)
+cfn=(12)
+calls=1 0 0
+23 102
+
+fl=(1)
+fn=(11)
+40 3
+
+fl=(7)
+fn=(63)
+39 34
+cfl=(1)
+cfn=(11)
+calls=1 0 0
+40 3
+
+fl=(7)
+fn=(59)
+115 262
+cfl=(7)
+cfn=(48)
+calls=1 0 0
+116 29
+cfl=(1)
+cfn=(49)
+calls=1 0 0
+116 1
+cfl=(7)
+cfn=(58)
+calls=1 0 0
+116 88
+cfl=(1)
+cfn=(49)
+calls=1 0 0
+117 1
+cfl=(7)
+cfn=(54)
+calls=1 0 0
+117 221
+cfl=(7)
+cfn=(63)
+calls=1 0 0
+118 37
+
+fl=(1)
+fn=(47)
+69 0
+
+fl=(7)
+fn=(48)
+67 38
+cfl=(1)
+cfn=(47)
+calls=1 0 0
+69 0
+
+fl=(1)
+fn=(35)
+75 1
+
+fl=(10)
+fn=(60)
+43 3
+
+fl=(1)
+fn=(61)
+76 38
+cfl=(10)
+cfn=(60)
+calls=1 0 0
+76 3
+
+fl=(7)
+fn=(62)
+72 121
+cfl=(7)
+cfn=(48)
+calls=1 0 0
+73 39
+cfl=(1)
+cfn=(35)
+calls=1 0 0
+75 1
+cfl=(1)
+cfn=(61)
+calls=1 0 0
+76 41
+
+fl=(1)
+fn=(47)
+69 0
+
+fl=(7)
+fn=(48)
+67 32
+cfl=(1)
+cfn=(47)
+calls=1 0 0
+69 0
+
+fl=(1)
+fn=(49)
+116 0
+
+fl=(1)
+fn=(35)
+103 1
+
+fl=(1)
+fn=(35)
+103 0
+
+fl=(7)
+fn=(58)
+82 73
+cfl=(1)
+cfn=(35)
+calls=1 0 0
+103 1
+cfl=(1)
+cfn=(35)
+calls=1 0 0
+103 0
+
+fl=(1)
+fn=(49)
+117 0
+
+fl=(1)
+fn=(50)
+63 4
+
+fl=(3)
+fn=(51)
+62 35
+cfl=(1)
+cfn=(50)
+calls=1 0 0
+63 4
+
+fl=(1)
+fn=(12)
+23 72
+
+fl=(7)
+fn=(54)
+18 77
+cfl=(3)
+cfn=(51)
+calls=1 0 0
+23 39
+cfl=(1)
+cfn=(12)
+calls=1 0 0
+23 72
+
+fl=(1)
+fn=(11)
+40 1
+
+fl=(7)
+fn=(63)
+39 29
+cfl=(1)
+cfn=(11)
+calls=1 0 0
+40 1
+
+fl=(7)
+fn=(59)
+115 238
+cfl=(7)
+cfn=(48)
+calls=1 0 0
+116 33
+cfl=(1)
+cfn=(49)
+calls=1 0 0
+116 0
+cfl=(7)
+cfn=(58)
+calls=1 0 0
+116 76
+cfl=(1)
+cfn=(49)
+calls=1 0 0
+117 0
+cfl=(7)
+cfn=(54)
+calls=1 0 0
+117 189
+cfl=(7)
+cfn=(63)
+calls=1 0 0
+118 30
+
+fl=(1)
+fn=(47)
+69 0
+
+fl=(7)
+fn=(48)
+67 31
+cfl=(1)
+cfn=(47)
+calls=1 0 0
+69 0
+
+fl=(1)
+fn=(49)
+116 0
+
+fl=(1)
+fn=(35)
+103 2
+
+fl=(1)
+fn=(35)
+103 0
+
+fl=(7)
+fn=(58)
+82 37
+cfl=(1)
+cfn=(35)
+calls=1 0 0
+103 2
+cfl=(1)
+cfn=(35)
+calls=1 0 0
+103 0
+
+fl=(1)
+fn=(49)
+117 0
+
+fl=(1)
+fn=(50)
+63 1
+
+fl=(3)
+fn=(51)
+62 85
+cfl=(1)
+cfn=(50)
+calls=1 0 0
+63 1
+
+fl=(1)
+fn=(12)
+23 61
+
+fl=(7)
+fn=(54)
+18 61
+cfl=(3)
+cfn=(51)
+calls=1 0 0
+23 87
+cfl=(1)
+cfn=(12)
+calls=1 0 0
+23 61
+
+fl=(1)
+fn=(11)
+40 2
+
+fl=(7)
+fn=(63)
+39 31
+cfl=(1)
+cfn=(11)
+calls=1 0 0
+40 2
+
+fl=(7)
+fn=(59)
+115 181
+cfl=(7)
+cfn=(48)
+calls=1 0 0
+116 32
+cfl=(1)
+cfn=(49)
+calls=1 0 0
+116 0
+cfl=(7)
+cfn=(58)
+calls=1 0 0
+116 41
+cfl=(1)
+cfn=(49)
+calls=1 0 0
+117 0
+cfl=(7)
+cfn=(54)
+calls=1 0 0
+117 211
+cfl=(7)
+cfn=(63)
+calls=1 0 0
+118 34
+
+fl=(1)
+fn=(47)
+69 0
+
+fl=(7)
+fn=(48)
+67 16
+cfl=(1)
+cfn=(47)
+calls=1 0 0
+69 0
+
+fl=(1)
+fn=(49)
+116 0
+
+fl=(1)
+fn=(35)
+90 1
+
+fl=(1)
+fn=(35)
+95 0
+
+fl=(7)
+fn=(58)
+82 33
+cfl=(1)
+cfn=(35)
+calls=1 0 0
+90 1
+cfl=(1)
+cfn=(35)
+calls=1 0 0
+95 0
+
+fl=(1)
+fn=(49)
+117 0
+
+fl=(1)
+fn=(50)
+63 1
+
+fl=(3)
+fn=(51)
+62 18
+cfl=(1)
+cfn=(50)
+calls=1 0 0
+63 1
+
+fl=(1)
+fn=(12)
+23 81
+
+fl=(7)
+fn=(54)
+18 133
+cfl=(3)
+cfn=(51)
+calls=1 0 0
+23 20
+cfl=(1)
+cfn=(12)
+calls=1 0 0
+23 81
+
+fl=(1)
+fn=(11)
+40 1
+
+fl=(7)
+fn=(63)
+39 35
+cfl=(1)
+cfn=(11)
+calls=1 0 0
+40 1
+
+fl=(7)
+fn=(59)
+115 176
+cfl=(7)
+cfn=(48)
+calls=1 0 0
+116 17
+cfl=(1)
+cfn=(49)
+calls=1 0 0
+116 0
+cfl=(7)
+cfn=(58)
+calls=1 0 0
+116 36
+cfl=(1)
+cfn=(49)
+calls=1 0 0
+117 0
+cfl=(7)
+cfn=(54)
+calls=1 0 0
+117 234
+cfl=(7)
+cfn=(63)
+calls=1 0 0
+118 36
+
+fl=(1)
+fn=(47)
+69 1
+
+fl=(7)
+fn=(48)
+67 33
+cfl=(1)
+cfn=(47)
+calls=1 0 0
+69 1
+
+fl=(1)
+fn=(35)
+75 0
+
+fl=(10)
+fn=(60)
+43 2
+
+fl=(1)
+fn=(61)
+76 36
+cfl=(10)
+cfn=(60)
+calls=1 0 0
+76 2
+
+fl=(7)
+fn=(62)
+72 121
+cfl=(7)
+cfn=(48)
+calls=1 0 0
+73 34
+cfl=(1)
+cfn=(35)
+calls=1 0 0
+75 0
+cfl=(1)
+cfn=(61)
+calls=1 0 0
+76 39
+
+fl=(1)
+fn=(47)
+69 0
+
+fl=(7)
+fn=(48)
+67 30
+cfl=(1)
+cfn=(47)
+calls=1 0 0
+69 0
+
+fl=(1)
+fn=(49)
+116 0
+
+fl=(1)
+fn=(35)
+103 2
+
+fl=(1)
+fn=(35)
+103 0
+
+fl=(7)
+fn=(58)
+82 64
+cfl=(1)
+cfn=(35)
+calls=1 0 0
+103 2
+cfl=(1)
+cfn=(35)
+calls=1 0 0
+103 0
+
+fl=(1)
+fn=(49)
+117 1
+
+fl=(1)
+fn=(50)
+63 2
+
+fl=(3)
+fn=(51)
+62 34
+cfl=(1)
+cfn=(50)
+calls=1 0 0
+63 2
+
+fl=(1)
+fn=(12)
+23 61
+
+fl=(7)
+fn=(54)
+18 80
+cfl=(3)
+cfn=(51)
+calls=1 0 0
+23 36
+cfl=(1)
+cfn=(12)
+calls=1 0 0
+23 61
+
+fl=(1)
+fn=(11)
+40 2
+
+fl=(7)
+fn=(63)
+39 33
+cfl=(1)
+cfn=(11)
+calls=1 0 0
+40 2
+
+fl=(7)
+fn=(59)
+115 250
+cfl=(7)
+cfn=(48)
+calls=1 0 0
+116 31
+cfl=(1)
+cfn=(49)
+calls=1 0 0
+116 0
+cfl=(7)
+cfn=(58)
+calls=1 0 0
+116 67
+cfl=(1)
+cfn=(49)
+calls=1 0 0
+117 1
+cfl=(7)
+cfn=(54)
+calls=1 0 0
+117 178
+cfl=(7)
+cfn=(63)
+calls=1 0 0
+118 36
+
+fl=(1)
+fn=(47)
+69 0
+
+fl=(7)
+fn=(48)
+67 44
+cfl=(1)
+cfn=(47)
+calls=1 0 0
+69 0
+
+fl=(1)
+fn=(49)
+116 0
+
+fl=(1)
+fn=(35)
+103 0
+
+fl=(1)
+fn=(35)
+103 0
+
+fl=(7)
+fn=(58)
+82 67
+cfl=(1)
+cfn=(35)
+calls=1 0 0
+103 0
+cfl=(1)
+cfn=(35)
+calls=1 0 0
+103 0
+
+fl=(1)
+fn=(49)
+117 0
+
+fl=(7)
+fn=(54)
+18 7
+
+fl=(1)
+fn=(35)
+103 1
+
+fl=(1)
+fn=(35)
+103 0
+
+fl=(1)
+fn=(64) php::array_pop
+61 0
+
+fl=(7)
+fn=(65) Web\Template->__pop
+59 38
+cfl=(1)
+cfn=(64)
+calls=1 0 0
+61 0
+
+fl=(1)
+fn=(66) php::ob_get_clean
+105 4
+
+fl=(1)
+fn=(35)
+106 0
+
+fl=(10)
+fn=(60)
+43 3
+
+fl=(1)
+fn=(67) php::call_user_func:{C:\Users\iroke\Desktop\Projects\Web\Smart ERP Solutions\erp.framework\v1\web\template.php:106}
+106 32
+cfl=(10)
+cfn=(60)
+calls=1 0 0
+106 3
+
+fl=(1)
+fn=(30)
+15 2
+
+fl=(1)
+fn=(30)
+15 0
+
+fl=(1)
+fn=(30)
+15 0
+
+fl=(1)
+fn=(30)
+15 0
+
+fl=(1)
+fn=(30)
+15 0
+
+fl=(1)
+fn=(30)
+15 0
+
+fl=(1)
+fn=(30)
+15 0
+
+fl=(1)
+fn=(30)
+15 1
+
+fl=(1)
+fn=(30)
+15 0
+
+fl=(1)
+fn=(30)
+15 0
+
+fl=(1)
+fn=(30)
+15 0
+
+fl=(1)
+fn=(30)
+15 0
+
+fl=(1)
+fn=(30)
+15 0
+
+fl=(1)
+fn=(30)
+15 0
+
+fl=(1)
+fn=(30)
+15 0
+
+fl=(1)
+fn=(49)
+30 2
+
+fl=(10)
+fn=(68) WidgetsV1\Page->__head
+8 432
+cfl=(1)
+cfn=(30)
+calls=1 0 0
+15 2
+cfl=(1)
+cfn=(30)
+calls=1 0 0
+15 0
+cfl=(1)
+cfn=(30)
+calls=1 0 0
+15 0
+cfl=(1)
+cfn=(30)
+calls=1 0 0
+15 0
+cfl=(1)
+cfn=(30)
+calls=1 0 0
+15 0
+cfl=(1)
+cfn=(30)
+calls=1 0 0
+15 0
+cfl=(1)
+cfn=(30)
+calls=1 0 0
+15 0
+cfl=(1)
+cfn=(30)
+calls=1 0 0
+15 1
+cfl=(1)
+cfn=(30)
+calls=1 0 0
+15 0
+cfl=(1)
+cfn=(30)
+calls=1 0 0
+15 0
+cfl=(1)
+cfn=(30)
+calls=1 0 0
+15 0
+cfl=(1)
+cfn=(30)
+calls=1 0 0
+15 0
+cfl=(1)
+cfn=(30)
+calls=1 0 0
+15 0
+cfl=(1)
+cfn=(30)
+calls=1 0 0
+15 0
+cfl=(1)
+cfn=(30)
+calls=1 0 0
+15 0
+cfl=(1)
+cfn=(49)
+calls=1 0 0
+30 2
+
+fl=(1)
+fn=(38)
+186 3
+
+fl=(1)
+fn=(46)
+188 5
+
+fl=(11) C:\Users\iroke\Desktop\Projects\Web\Smart ERP Solutions\widgets\html\page\default.tpl
+fn=(69) include::C:\Users\iroke\Desktop\Projects\Web\Smart ERP Solutions\widgets\html\page\default.tpl
+1 5
+
+fl=(1)
+fn=(66)
+193 0
+
+fl=(7)
+fn=(70) Widget->tpl
+185 358
+cfl=(1)
+cfn=(38)
+calls=1 0 0
+186 3
+cfl=(1)
+cfn=(46)
+calls=1 0 0
+188 5
+cfl=(11)
+cfn=(69)
+calls=1 0 0
+189 5
+cfl=(1)
+cfn=(66)
+calls=1 0 0
+193 0
+
+fl=(10)
+fn=(71) WidgetsV1\Page->OnEnd
+37 184
+cfl=(10)
+cfn=(68)
+calls=1 0 0
+39 445
+cfl=(7)
+cfn=(70)
+calls=1 0 0
+40 374
+
+fl=(1)
+fn=(72) php::call_user_func:{C:\Users\iroke\Desktop\Projects\Web\Smart ERP Solutions\erp.framework\v1\web\template.php:107}
+107 29
+cfl=(10)
+cfn=(71)
+calls=1 0 0
+107 1003
+
+fl=(7)
+fn=(58)
+82 316
+cfl=(1)
+cfn=(35)
+calls=1 0 0
+103 1
+cfl=(1)
+cfn=(35)
+calls=1 0 0
+103 0
+cfl=(7)
+cfn=(65)
+calls=1 0 0
+104 39
+cfl=(1)
+cfn=(66)
+calls=1 0 0
+105 4
+cfl=(1)
+cfn=(35)
+calls=1 0 0
+106 0
+cfl=(1)
+cfn=(67)
+calls=1 0 0
+106 36
+cfl=(1)
+cfn=(72)
+calls=1 0 0
+107 1033
+
+fl=(7)
+fn=(59)
+115 245
+cfl=(7)
+cfn=(48)
+calls=1 0 0
+116 45
+cfl=(1)
+cfn=(49)
+calls=1 0 0
+116 0
+cfl=(7)
+cfn=(58)
+calls=1 0 0
+116 69
+cfl=(1)
+cfn=(49)
+calls=1 0 0
+117 0
+cfl=(7)
+cfn=(54)
+calls=1 0 0
+117 7
+cfl=(7)
+cfn=(58)
+calls=1 0 0
+117 1431
+
+fl=(12) C:\Users\iroke\Desktop\Projects\Web\Smart ERP Solutions\tests\virtual\.compile\index_tpls_default_index_tpl
+fn=(73) include::C:\Users\iroke\Desktop\Projects\Web\Smart ERP Solutions\tests\virtual\.compile\index_tpls_default_index_tpl
+1 958
+cfl=(7)
+cfn=(59)
+calls=1 0 0
+1 879
+cfl=(7)
+cfn=(62)
+calls=1 0 0
+1 104
+cfl=(7)
+cfn=(59)
+calls=1 0 0
+3 325
+cfl=(7)
+cfn=(62)
+calls=1 0 0
+3 258
+cfl=(7)
+cfn=(59)
+calls=1 0 0
+4 643
+cfl=(7)
+cfn=(62)
+calls=1 0 0
+4 204
+cfl=(7)
+cfn=(59)
+calls=1 0 0
+4 570
+cfl=(7)
+cfn=(59)
+calls=1 0 0
+5 502
+cfl=(7)
+cfn=(59)
+calls=1 0 0
+6 501
+cfl=(7)
+cfn=(62)
+calls=1 0 0
+6 195
+cfl=(7)
+cfn=(59)
+calls=1 0 0
+6 567
+cfl=(7)
+cfn=(59)
+calls=1 0 0
+8 1801
+
+fl=(1)
+fn=(66)
+174 0
+
+fl=(7)
+fn=(74) Web\Template->__compile
+160 468
+cfl=(3)
+cfn=(44)
+calls=1 0 0
+161 271
+cfl=(1)
+cfn=(45)
+calls=1 0 0
+162 7
+cfl=(3)
+cfn=(44)
+calls=1 0 0
+162 261
+cfl=(1)
+cfn=(38)
+calls=1 0 0
+166 1
+cfl=(1)
+cfn=(46)
+calls=1 0 0
+168 0
+cfl=(3)
+cfn=(26)
+calls=1 0 0
+169 97
+cfl=(12)
+cfn=(73)
+calls=1 0 0
+169 7512
+cfl=(1)
+cfn=(66)
+calls=1 0 0
+174 0
+
+fl=(7)
+fn=(75) Web\Template->Fetch
+137 54
+cfl=(7)
+cfn=(74)
+calls=1 0 0
+138 8621
+
+fl=(7)
+fn=(76) Web\Template->Display
+134 22
+cfl=(7)
+cfn=(75)
+calls=1 0 0
+135 8676
+
+fl=(9)
+fn=(77) IndexController->OnDefault
+3 45
+cfl=(5)
+cfn=(41)
+calls=1 0 0
+4 71
+cfl=(7)
+cfn=(76)
+calls=1 0 0
+4 8698
+
+fl=(1)
+fn=(78) php::call_user_func_array:{C:\Users\iroke\Desktop\Projects\Web\Smart ERP Solutions\erp.framework\v1\web\application.php:88}
+88 32
+cfl=(9)
+cfn=(77)
+calls=1 0 0
+88 8815
+
+fl=(1)
+fn=(79) php::ob_end_flush
+89 15
+
+fl=(5)
+fn=(80) Web\Application->__routing
+54 261
+cfl=(1)
+cfn=(30)
+calls=1 0 0
+55 2
+cfl=(5)
+cfn=(34)
+calls=1 0 0
+57 669
+cfl=(1)
+cfn=(7)
+calls=1 0 0
+63 5
+cfl=(1)
+cfn=(18)
+calls=1 0 0
+68 0
+cfl=(1)
+cfn=(18)
+calls=1 0 0
+72 0
+cfl=(1)
+cfn=(35)
+calls=1 0 0
+72 0
+cfl=(1)
+cfn=(36)
+calls=1 0 0
+86 0
+cfl=(1)
+cfn=(37)
+calls=1 0 0
+86 1
+cfl=(1)
+cfn=(38)
+calls=1 0 0
+87 2
+cfl=(1)
+cfn=(39)
+calls=1 0 0
+88 0
+cfl=(1)
+cfn=(78)
+calls=1 0 0
+88 8847
+cfl=(1)
+cfn=(79)
+calls=1 0 0
+89 15
+
+fl=(4)
+fn=(81) Web\Application::Run
+63 166
+cfl=(4)
+cfn=(20)
+calls=1 0 0
+64 46
+cfl=(1)
+cfn=(18)
+calls=1 0 0
+64 0
+cfl=(1)
+cfn=(21)
+calls=1 0 0
+67 0
+cfl=(8)
+cfn=(29)
+calls=1 0 0
+68 1359
+cfl=(5)
+cfn=(80)
+calls=1 0 0
+69 9809
+
+fl=(8)
+fn=(82) {main}
+
+summary: 18497
+
+1 1053
+cfl=(1)
+cfn=(1)
+calls=1 0 0
+2 14
+cfl=(1)
+cfn=(2)
+calls=1 0 0
+2 3
+cfl=(3)
+cfn=(9)
+calls=1 0 0
+3 3825
+cfl=(1)
+cfn=(15)
+calls=1 0 0
+8 1591
+cfl=(1)
+cfn=(15)
+calls=1 0 0
+9 626
+cfl=(4)
+cfn=(81)
+calls=1 0 0
+27 11382
+

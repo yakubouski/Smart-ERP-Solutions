@@ -1,21 +1,36 @@
-<?php $this->__(['page','html'],['url'=>'/',],1,'<page:html url=\'/\'>');if(empty($this->__skip())){  
-     $this->__(['ui','control','tabs'],['class'=>"default",'name'=>'er\fer','default'=>"1",],1,'<ui:control:tabs class="default" name=\'er\fer\' default="1">');if(empty($this->__skip())){  
-         $this->__(['tabs','item'],['id'=>'sfewrfwer',],0,'<tabs:item id=\'sfewrfwer\' />'); 
-     } $this->__(['ui','control','tabs'],[],-1,'</ui:control:tabs>'); 
+<?php $this->__(['html','page'],['url'=>'/','meta-title'=>"Генератор страницы",'meta-description'=>"Пример генерации страниц",'meta-keywords'=>"",'meta-author'=>"",'meta-copyright'=>"",'meta-charset'=>"",'meta-viewport'=>"",'cache-max-age'=>"604800",'rel-canonical'=>"",'rel-author'=>"",'rel-publisher'=>"",'rel-icon'=>"",'rel-icon-128x128'=>"",],1,'<html:page url=\'/\'\n           meta-title="Генератор страницы" meta-description="Пример генерации страниц" \n           meta-keywords="" meta-author="" meta-copyright="" meta-charset="" meta-viewport=""\n           cache-max-age="604800"\n           rel-canonical="" rel-author="" rel-publisher="" rel-icon="" rel-icon-128x128=""|||');if(empty($this->__skip())){  
     
-     $this->__(['ui','control','tabs'],['class'=>"default",'name'=>'er\fer','default'=>"1",],1,'<ui:control:tabs class="default" name=\'er\fer\' default="1">');if(empty($this->__skip())){  
-         $this->__(['tabs','item'],['id'=>'sfewrfwer',],0,'<tabs:item id=\'sfewrfwer\' />'); 
-         $this->__(['meta','title'],[],1,'<meta:title>');if(empty($this->__skip())){  ?>Hello dear friends<?php } $this->__(['meta','title'],[],-1,'</meta:title>'); 
-     } $this->__(['ui','control','tabs'],[],-1,'</ui:control:tabs>'); 
- } $this->__(['page','html'],[],-1,'</page:html>'); 
+     $this->__(['assets','style'],['src'=>"https://fonts.googleapis.com/icon?family=Material+Icons",],0,'<assets:style src="https://fonts.googleapis.com/icon?family=Material+Icons"/|||'); 
+     $this->__(['assets','style'],['src'=>"https://fonts.googleapis.com/css?family=Roboto:100,300,400&subset=cyrillic",],0,'<assets:style src="https://fonts.googleapis.com/css?family=Roboto:100,300,400&subset=cyrillic"/|||'); 
+     $this->__(['assets','style'],['name'=>"default.css",],0,'<assets:style name="default.css"/|||'); 
+    
+     $this->__(['page','header'],[],1,'<page:header|||');if(empty($this->__skip())){  
+         $this->__(['header','title'],['logo-phone'=>"",'logo-tablet'=>"",'logo-desktop'=>"",],1,'<header:title logo-phone="" logo-tablet="" logo-desktop=""|||');if(empty($this->__skip())){  ?>Страница<?php } $this->__(['header','title'],[],-1,'</header:title|||'); 
+         $this->__(['header','menu'],['menu-icon'=>"&#xE5D2;",],1,'<header:menu menu-icon="&#xE5D2;"|||');if(empty($this->__skip())){  
+             $this->__(['menu','item'],['action-link'=>"",'action-dialog'=>"",'icon-svg'=>"",],1,'<menu:item action-link="" action-dialog="" icon-svg=""|||');if(empty($this->__skip())){  ?>wedwe<?php } $this->__(['menu','item'],[],-1,'</menu:item|||'); 
+         } $this->__(['header','menu'],[],-1,'</header:menu|||'); 
+     } $this->__(['page','header'],[],-1,'</page:header|||'); ?>
+    
+    Hello world
+<?php } $this->__(['html','page'],[],-1,'</html:page|||'); 
 
 
- $this->__(['page','html'],['url'=>'/tnx/',],1,'<page:html url=\'/tnx/\'>');if(empty($this->__skip())){  
-     $this->__(['ui','control','tabs'],['class'=>"default",'name'=>'er\fer','default'=>"1",],1,'<ui:control:tabs class="default" name=\'er\fer\' default="1">');if(empty($this->__skip())){  
-         $this->__(['tabs','item'],['id'=>'sfe  fvertb ertb rethewrfwer',],0,'<tabs:item id=\'sfe  fvertb ertb rethewrfwer\' />'); 
-     } $this->__(['ui','control','tabs'],[],-1,'</ui:control:tabs>'); 
+ $this->__(['html','page'],['url'=>'/tnx/',],1,'<html:page url=\'/tnx/\'|||');if(empty($this->__skip())){  
     
-     $this->__(['ui','control','tabs'],['class'=>"default",'name'=>'er\fer','default'=>"1",],1,'<ui:control:tabs class="default" name=\'er\fer\' default="1">');if(empty($this->__skip())){  
-         $this->__(['tabs','item'],['id'=>'sfewrfwer',],0,'<tabs:item id=\'sfewrfwer\' />'); 
-     } $this->__(['ui','control','tabs'],[],-1,'</ui:control:tabs>'); 
- } $this->__(['page','html'],[],-1,'</page:html>'); ?>
+ } $this->__(['html','page'],[],-1,'</html:page|||'); 
+
+       
+ $this->__(['html','assets'],[],1,'<html:assets|||');if(empty($this->__skip())){   
+     $this->__(['style','less'],['name'=>"default.css",'import'=>"html.less,mixin.less",],1,'<style:less name="default.css" import="html.less,mixin.less"|||');if(empty($this->__skip())){  ?>
+    @HEADER-HEIGHT: 3rem;
+    body {
+        font-family: 'Roboto', sans-serif;
+        padding-top:  @HEADER-HEIGHT;
+        &>header {
+            height: @HEADER-HEIGHT;
+            background-color: white;
+            .drop-shadow();
+        }
+    }
+    <?php } $this->__(['style','less'],[],-1,'</style:less|||'); 
+ } $this->__(['html','assets'],[],-1,'</html:assets|||'); ?>

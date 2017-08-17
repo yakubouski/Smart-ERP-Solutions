@@ -9,6 +9,8 @@ Options -Indexes -Includes -MultiViews
     php_value short_open_tag on
     php_value log_errors on
     php_value error_log .log/erp.log
+    php_value xdebug.profiler_enable 0
+    php_value xdebug.profiler_output_dir "C:\Users\iroke\Desktop\Projects\Web\Smart ERP Solutions\.log\profiler"
 </IfModule>
 
 <IfModule mod_env.c>

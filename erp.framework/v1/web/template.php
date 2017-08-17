@@ -17,7 +17,7 @@ namespace Web
 
         protected function __class($class) {
 
-            if(isset(self::$WidgetsClass[$class])) return (new self::$WidgetsClass[$class] ());
+            if(isset(self::$WidgetsClass[$class])) return (new self::$WidgetsClass[$class] ($this));
 
             foreach(self::$WidgetsPaths as $p) {
                 if(file_exists($filename = Directory($p).$class.'.php')) {
@@ -26,7 +26,7 @@ namespace Web
                     (empty($class_name) || $class_name === 1) && $class_name = $class;
                     self::$WidgetsClass[$class] = $class_name;
 
-                    return (new $class_name ());
+                    return (new $class_name ($this));
                 }
             }
 
@@ -34,15 +34,16 @@ namespace Web
         }
 
         private function __escape(&$str) {
-            return str_replace(["'","\n","\t","\r","\0"],["\'",'\n','\t','\r',''], $str);
+            return str_replace(["'","\n","\t","\r","\0",'>'],["\'",'\n','\t','\r','','|||'], $str);
         }
         private function __unescape(&$str) {
-            return str_replace(["\'",'\n','\t','\r'],["'","\n","\t","\r"], $str);
+            return str_replace(["\'",'\n','\t','\r','|||'],["'","\n","\t","\r",'>'], $str);
         }
 
         protected function __parse($Content) {
             return empty(self::$WidgetsPaths) ? $Content : preg_replace_callback_array([
-                '%<(/?)(\w+):([\w:]+)(?:\s+(.*?))?\s*(/?)(?!>[^<]+>)>%s'=> function($m) {
+                #'%<(/?)(\w+):([\w:]+)(?:\s+(.*?))?\s*(/?)(?!>[^<]+>)>%s'=> function($m) {
+                '%<(/?)(\w+):([\w:]+)(?:\s+(.*?))?\s*(/?)>%s'=> function($m) {
                         if(isset($m[4]))
                             $m[4] = preg_replace(array('/([\w-]+)\s*=\s*("|\')(.*?)\2\s*/s','/([\w-]+)\s*=\s*((?:\w+::)?\$[^\s\/]+)\s*/s'), array('\'\1\'=>\2\3\2,','\'\1\'=>\2,'), $m[4]);
                         else
@@ -103,7 +104,7 @@ namespace Web
                 if(method_exists($Object,$fn = $method) || method_exists($Object,$fn = $method.'End')) {
                     @list(,$ObjArg) = $this->__pop();
                     $inner = ob_get_clean();
-                    if(method_exists($Object,$method.'Skip') && empty(call_user_func([$Object,$method.'Skip'], $ObjArg))) {
+                    if(!method_exists($Object,$method.'Skip') || empty(call_user_func([$Object,$method.'Skip'], $ObjArg))) {
                         call_user_func([$Object,$fn], $ObjArg, $inner);
                     }
                     return true;
@@ -158,7 +159,7 @@ namespace Web
         public function __toString() { return $this->Fetch($this->TplFileName,$this->TplArgs); }
 
         protected function __compile($TplFileName,$TplArgs) {
-            if(($ModTime = FileTime($SrcFile = Application::DirModules.$TplFileName))) {
+            if(($ModTime = $this->ModTime = FileTime($SrcFile = Application::DirModules.$TplFileName))) {
                 if($ModTime >= FileTime($CompileFileName = Application::DirTemplateCompile.preg_replace('/[\W-]+/u', '_', $TplFileName))) {
                     !MakeDir(Application::DirTemplateCompile, true) && trigger_error(__METHOD__.' cannot create output compile directory '.\Path(Application::DirTemplateCompile),E_USER_WARNING);
                     WriteFileContent($CompileFileName, $this->__parse(ReadFileContent($SrcFile)));
@@ -182,6 +183,37 @@ namespace
 {
     abstract class Widget
     {
+        const AssetsDirName = '.assets/';
+        
+        private $Onwer;
+        public function __construct(\Web\Template $tpl) {
+            $this->Onwer = $tpl;
+        }
+        protected function IsFileOld($assetFile) {
+            return !($AssetTime = @filemtime($assetFile)) || $this->Onwer->ModTime > $AssetTime;
+        }
+        
+        private function AssetsDir() {
+            if(!file_exists($base = \Globals\Server::$BaseDir.DIRECTORY_SEPARATOR.self::AssetsDirName)) {
+                @mkdir($base, 0775);
+            }
+            return $base;
+        }
+        private function AssetsHashName($assetName,$Ext) {
+            return decoct(crc32(\Globals\Server::$Domain)).'-'.sha1(\Globals\Server::$Domain.'-'.$assetName).$Ext;
+        }
+        
+        protected function AssetsUrl($assetName,$Ext) {
+            return '/'.self::AssetsDirName.$this->AssetsHashName($assetName,$Ext);
+        }
+        protected function AssetsFile($assetName,$Ext) {
+            return $this->AssetsDir().$this->AssetsHashName($assetName,$Ext);
+        }
+        protected function AssetsUse($assetName) {
+            return $this->AssetsDir().$assetName;
+        }
+        
+        
         protected function tpl($tpl,$args=[]) {
             ob_start();
             try {

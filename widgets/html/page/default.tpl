@@ -1,10 +1,8 @@
 ﻿<!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <?=$this->__head()?>
+<?=$__HTML__HEAD__?>
     </head>
-
     <body>
         <?=$__HTML__INNER__?>
     </body>
