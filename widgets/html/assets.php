@@ -12,7 +12,7 @@ class HtmlAssets extends \Widget
     public function OnStyleLess($args,$inner) {
         if(isset($args['name'])) {
             $file = $this->AssetsFile($args['name'],'.css');
-            if($this->IsFileOld($file)) {
+            if(isset($args['debug']) || $this->IsFileOld($file)) {
                 $use = [];
                 if(isset($args['import'])) {
                     foreach(explode(',',$args['import'])?:[] as $fn) {
@@ -24,6 +24,7 @@ class HtmlAssets extends \Widget
                 $less = new \Lib\Less();
                 $less->setFormatter("compressed");
                 $less->setImportDir(['/'.self::AssetsDirName]);
+                isset($args['less-vars']) && $less->setVariables(json_decode($args['less-vars'],true));
                 file_put_contents($file, $less->compile(implode(PHP_EOL,$use).PHP_EOL.$inner));
             }
         }

@@ -7,15 +7,17 @@
     <assets:style src="https://fonts.googleapis.com/icon?family=Material+Icons"/>
     <assets:style src="https://fonts.googleapis.com/css?family=Roboto:100,300,400&subset=cyrillic"/>
     <assets:style name="default.css"/>
+    <assets:js src="/.assets/ui.js"/>
     
     <page:header>
-        <header:title logo-phone="" logo-tablet="" logo-desktop="">Страница</header:title>
-        <header:menu menu-icon="&#xE5D2;">
+        <header:title after="пост заголовок">Страница</header:title>
+        <header:menu>
             <menu:item action-link="" action-dialog="" icon-svg="">wedwe</menu:item>
         </header:menu>
     </page:header>
-    
+    <div style="height: 1000px;">
     Hello world
+    </div>
 </html:page>
 
 
@@ -25,15 +27,14 @@
 
        
 <html:assets> 
-    <style:less name="default.css" import="html.less,mixin.less">
-    @HEADER-HEIGHT: 3rem;
+    <style:less name="default.css" import="html.less,mixin.less" debug="1" less-vars='{"HEADER-HEIGHT": "3rem"}'>
     body {
         font-family: 'Roboto', sans-serif;
-        padding-top:  @HEADER-HEIGHT;
+        max-width: 1024px;
+        
+        
         &>header {
-            height: @HEADER-HEIGHT;
-            background-color: white;
-            .drop-shadow();
+            
         }
     }
     </style:less>
